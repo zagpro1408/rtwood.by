@@ -1,0 +1,25 @@
+<h3>ОСТАВИТЬ ЗАЯВКУ</h3>
+<br>
+ <%= form_for :order, url: root_path do |f| %>
+    <div class="form-group">
+        <%= f.label :company, 'Компания' %>
+        <%= f.text_field :company, class: 'form-control', placeholder: 'ООО "РадиалТрейд"' %>
+    </div>
+    <div class="form-group">
+        <%= f.label :name, 'Имя' %>
+        <%= f.text_field :name, class: 'form-control', placeholder: 'Владимир' %>
+    </div>
+    <div class="form-group">
+        <%= f.label :email, 'Электронная почта' %>
+        <%= f.email_field :email, class: 'form-control', placeholder: 'info@rtwood.by' %>
+    </div>
+        <%= f.label :phone, 'Телефон' %>
+        <%= f.telephone_field :phone, class: 'form-control', placeholder: '+375296753589' %>
+    <div class="form-group">
+    </div>
+        <%= f.label :text, 'Ваш текст' %>
+        <%= f.text_area :text, class: 'form-control', rows: '5' %>
+    <div class="form-group">
+    </div><br>
+    <%= f.submit 'ОТПРАВИТЬ', class: 'btn btn-large btn-success' %>
+ <% end %>
