@@ -1,6 +1,15 @@
 <h3>ОСТАВИТЬ ЗАЯВКУ</h3>
-<br>
+
  <%= form_for :order, url: root_path do |f| %>
+
+    <% if @order && @order.errors.any? %>
+        <div style="background-color: red; margin: 5px;">
+            <% @order.errors.full_messages.each do |msg| %>
+              <b><p><%= msg %></p></b>
+            <% end %>
+        </div>
+    <% end %>
+    <br>
     <div class="form-group">
         <%= f.label :company, 'Компания' %>
         <%= f.text_field :company, class: 'form-control', placeholder: 'ООО "РадиалТрейд"' %>
@@ -14,7 +23,7 @@
         <%= f.email_field :email, class: 'form-control', placeholder: 'info@rtwood.by' %>
     </div>
         <%= f.label :number, 'Телефон' %>
-        <%= f.telephone_field :number, class: 'form-control', placeholder: '+375296753589' %>
+        <%= f.telephone_field :number, class: 'form-control', placeholder: '375296753589' %>
     <div class="form-group">
     </div>
         <%= f.label :text, 'Ваш текст' %>
